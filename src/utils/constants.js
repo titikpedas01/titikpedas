@@ -68,7 +68,7 @@ export const CONTACT_INFO = {
   tiktok: '@titikpedas',
   tiktokLink: 'https://tiktok.com/@titikpedas',
   address: 'Jalan Irigasi, Kec. Pauh, Kota Padang, Sumatera Barat',
-  mapsLink: 'https://maps.app.goo.gl/YourLinkHere',
+  mapsLink: 'https://maps.app.goo.gl/2VY4JLbykb6cxj7cA',
 }
 
 // ─── QRIS ────────────────────────────────────────────────────────────────────

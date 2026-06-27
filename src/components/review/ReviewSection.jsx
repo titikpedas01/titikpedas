@@ -44,15 +44,27 @@ function StarRow({ value, max = 5, size = 'w-4 h-4', interactive = false, onSet 
 export default function ReviewSection({ menuId }) {
   const { user }              = useAuth()
   const [reviews, setReviews] = useState([])
+  const [canReview, setCanReview] = useState(false)
+  const [checkingEligibility, setCheckingEligibility] = useState(false)
   const [rating, setRating]   = useState(0)
   const [comment, setComment] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [formError, setFormError]   = useState(null)
   const [submitted, setSubmitted]   = useState(false)
 
+  // Fetch ulasan — untuk semua pengunjung
   useEffect(() => {
     fetchReviews()
   }, [menuId])
+
+  // Cek eligibilitas hanya jika user login
+  useEffect(() => {
+    if (!user) {
+      setCanReview(false)
+      return
+    }
+    checkEligibility()
+  }, [user, menuId])
 
   async function fetchReviews() {
     const { data } = await supabase
@@ -62,6 +74,21 @@ export default function ReviewSection({ menuId }) {
       .eq('is_visible', true)
       .order('created_at', { ascending: false })
     setReviews(data ?? [])
+  }
+
+  async function checkEligibility() {
+    setCheckingEligibility(true)
+    // Cek apakah user punya order_item untuk menu ini dengan status selesai
+    const { data } = await supabase
+      .from('order_items')
+      .select('order_id, orders!inner(customer_id, status)')
+      .eq('menu_id', menuId)
+      .eq('orders.customer_id', user.id)
+      .eq('orders.status', 'selesai')
+      .limit(1)
+
+    setCanReview((data ?? []).length > 0)
+    setCheckingEligibility(false)
   }
 
   async function handleSubmit(e) {
@@ -113,7 +140,7 @@ export default function ReviewSection({ menuId }) {
         )}
       </div>
 
-      {/* ── List ulasan ──────────────────────────────────────────────── */}
+      {/* ── List ulasan — tampil untuk semua pengunjung ──────────── */}
       {reviews.length > 0 && (
         <div className="space-y-4 mb-6">
           {reviews.map((r) => (
@@ -139,10 +166,23 @@ export default function ReviewSection({ menuId }) {
       )}
 
       {/* ── Form ulasan ──────────────────────────────────────────────── */}
-      {user ? (
+      {!user && (
+        <p className="text-sm text-gray-400 italic">
+          <a href="/login" className="text-primary font-semibold hover:underline">Login</a>{' '}
+          untuk memberikan ulasan.
+        </p>
+      )}
+
+      {user && !checkingEligibility && !canReview && (
+        <p className="text-sm text-gray-400 italic">
+          Kamu perlu menyelesaikan pesanan menu ini untuk memberikan ulasan.
+        </p>
+      )}
+
+      {user && canReview && (
         submitted ? (
           <p className="text-sm text-green-600 font-medium">
-            Ulasan kamu berhasil dikirim! Terima kasih 🙌
+            Ulasan kamu berhasil dikirim! Terima kasih.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-3 bg-gray-50 rounded-xl p-4">
@@ -173,11 +213,6 @@ export default function ReviewSection({ menuId }) {
             </button>
           </form>
         )
-      ) : (
-        <p className="text-sm text-gray-400 italic">
-          <a href="/login" className="text-primary font-semibold hover:underline">Login</a>{' '}
-          untuk memberikan ulasan.
-        </p>
       )}
     </div>
   )

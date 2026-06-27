@@ -109,7 +109,7 @@ export default function ContactPage() {
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden min-h-[400px]">
           <iframe
             title="Lokasi Titik Pedas"
-            src="https://maps.google.com/maps?q=Jalan+Irigasi+Pauh+Padang&output=embed"
+            src="https://maps.google.com/maps?q=Jalan+Irigasi+Kecamatan+Pauh+Kota+Padang+Sumatera+Barat&output=embed"
             width="100%"
             height="100%"
             className="w-full h-full min-h-[400px] border-0"
