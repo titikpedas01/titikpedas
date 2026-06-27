@@ -507,7 +507,7 @@ export default function CheckoutPage() {
                       </p>
                     ) : (
                       <img
-                        src="/qris.jpeg"
+                        src="https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/QRIS.jpeg"
                         alt="QRIS Titik Pedas"
                         className="w-full h-full object-contain p-1"
                         onError={() => setQrisImgError(true)}

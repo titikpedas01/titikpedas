@@ -62,7 +62,7 @@ export default function Navbar() {
 
           {/* ── Logo ──────────────────────────────────────────────────── */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src="/Logo.png" alt="Logo" className="h-12 w-auto object-contain" />
+            <img src="https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/Logo.png" alt="Logo" className="h-12 w-auto object-contain" />
             <span
               className="text-xl font-black hidden sm:block"
               style={{ fontFamily: 'League Spartan', color: '#A30D0D' }}

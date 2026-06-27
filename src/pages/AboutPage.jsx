@@ -92,7 +92,7 @@ export default function AboutPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <img
-            src="/Logo.png"
+            src="https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/Logo.png"
             alt="Logo Titik Pedas"
             className="w-48 h-48 object-contain mx-auto shrink-0"
           />

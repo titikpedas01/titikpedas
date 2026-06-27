@@ -104,7 +104,7 @@ export default function LoginPage() {
         {/* ── Logo ────────────────────────────────────────────────── */}
         <div className="flex flex-col items-center mb-6">
           <img
-            src="/Logo.png"
+            src="https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/Logo.png"
             alt="Titik Pedas"
             className="w-24 h-24 object-contain mb-2"
           />

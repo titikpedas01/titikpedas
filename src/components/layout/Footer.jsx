@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <img src="/Logo.png" alt="Titik Pedas" className="h-16 w-auto" />
+              <img src="https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/Logo.png" alt="Titik Pedas" className="h-16 w-auto" />
             </Link>
             <p className="text-sm leading-relaxed italic text-gray-500 mb-4">
               "Nge-Jebew aja dulu,<br />urusan diet nanti aja!"

@@ -1,3 +1,9 @@
+# Claude Code internal files
+.claude/
+
+# Reference photos (tidak perlu di-push)
+TITIK PEDAS/
+
 # Dependencies
 node_modules/
 
