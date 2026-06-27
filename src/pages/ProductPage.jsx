@@ -65,10 +65,10 @@ function ProductCard({ menu, toppings, onAddToCart }) {
 
       {/* ── Gambar ──────────────────────────────────────────────────── */}
       <img
-        src={menu.image_url || '/image.png'}
+        src={menu.image_url || 'https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/image.png'}
         alt={menu.name}
         className="w-full h-48 object-cover rounded-t-xl"
-        onError={(e) => { e.target.src = '/image.png' }}
+        onError={(e) => { e.target.src = 'https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/image.png' }}
       />
 
       <div className="p-5 flex flex-col flex-1 gap-4">

@@ -41,10 +41,10 @@ function MenuCard({ item, onAddToCart }) {
   return (
     <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
       <img
-        src={item.image_url || '/image.png'}
+        src={item.image_url || 'https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/image.png'}
         alt={item.name}
         className="w-full h-48 object-cover rounded-t-xl"
-        onError={(e) => { e.target.src = '/image.png' }}
+        onError={(e) => { e.target.src = 'https://zitzenxnmjsgpntdsrqz.supabase.co/storage/v1/object/public/assets/image.png' }}
       />
 
       {/* Konten */}
