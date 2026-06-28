@@ -30,7 +30,7 @@ export default function AboutPage() {
             Tentang Kami
           </h1>
           <p className="text-white/70 text-base sm:text-lg max-w-xl mx-auto">
-            Mie Jebew Padang yang lahir dari dapur sederhana dengan semangat yang tidak pernah padam.
+            Mie Jebew yang lahir dari dapur sederhana dengan semangat yang tidak pernah padam.
           </p>
         </div>
       </div>
