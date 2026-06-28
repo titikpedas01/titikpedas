@@ -104,7 +104,7 @@ const FEATURES = [
     icon: Wallet,
     title: 'Harga Mahasiswa',
     description:
-      'Kenyang, puas, dan dompet tetap aman. Mulai dari Rp 15.000 sudah dapat Mie Jebew yang bikin nagih!',
+      'Kenyang, puas, dan dompet tetap aman. Mulai dari Rp 10.000 sudah dapat Mie Jebew yang bikin nagih!',
   },
 ]
 
@@ -173,7 +173,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             {/* Label kecil */}
             <span className="inline-flex items-center gap-1.5 bg-white/10 text-white/80 text-xs font-semibold px-4 py-1.5 rounded-full mb-7 tracking-widest uppercase border border-white/20">
-              🔥 Mie Jebew Padang
+              🔥 Mie Jebew
             </span>
 
             {/* Heading utama */}
