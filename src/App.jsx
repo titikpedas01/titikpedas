@@ -17,6 +17,7 @@ import OrderHistoryPage from './pages/OrderHistoryPage'
 import OrderTrackingPage from './pages/OrderTrackingPage'
 import NotFoundPage from './pages/NotFoundPage'
 import AdminMenuPage from './pages/admin/AdminMenuPage'
+import ScrollToTop from './components/ui/ScrollToTop'
 
 // Placeholder sementara – akan diganti bertahap sesuai progres
 function ComingSoon({ page }) {
@@ -43,6 +44,7 @@ export default function App() {
             }}
           />
 
+          <ScrollToTop />
           <Routes>
             <Route
               path="/"
